@@ -1,0 +1,33 @@
+==
+
+The generated unity3d object is not included in the repository.  The code expects that to exist as:
+
+web/unity/Unity/codespells/codespells.unity3d
+
+==
+
+A simple http server is required to handle the cross-site-scripting security concerns as the blockly and unity iframes need to be able to communicate.  If you have python installed, the SimpleHTTPServer.sh in the root directory will work for OSX and most Linux distributions.  If you're using windows, please add the appropriate bat file to the repository.
+
+==
+
+Blockly depends on minified files, which are good for deployment, but to debug the javascript, or to develop against it, you'll need an additional library called closure, expected to be at the same level as the "web" directory.  For example, I use:
+
+codespells/
+	web/
+	closure-library-read-only/
+
+Included in the repo is a symlink from where blockly expects the library to be, to the directory above.   You can pull the closure fork from the codespells project as well, https://github.com/codespells/closure-library.git
+	
+
+==
+
+If you use the simple server as configured, you'll be able to access the app at:
+
+http://localhost:8000/unity/index.html
+
+
+For development/debugging of javascript, read the note above about closure and use:
+
+http://localhost:8000/unity/index_uncompressed.html
+
+
