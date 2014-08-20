@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="google" value="notranslate">
+  
+  <script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+
+    <!--script>
+      function init() {
+        if(window.parent && window.parent.blocklyLoaded)
+          window.parent.blocklyLoaded(Blockly);
+
+        if(top == window)
+          document.getElementById("instructions").style.display="block"
+      }
+    </script-->
+    
+    <style>
+      #unity{
+        position: fixed;
+        width: 1280px;
+        height: 750px;
+        /*width: 1920px;
+        height: 1080px;*/
+        z-index: 0;
+      }
+      
+      #blocklyFrame{
+        background-color: rgba(32,32,32,.5);
+        position: fixed;
+        top: 70px;
+        width: 1280px;
+        height: 650px;
+        /*width: 1920px;
+        height: 1010px;*/
+        z-index: 100;
+        opacity: .95;
+      }
+    </style>
+</head>
+<body>
+  <div id="code_toggle" style="width: 50px; height: 50px; position: fixed; right: 0px; z-index: 200; background-color:clear">
+  </div>
+  <script type="text/javascript">
+    function blocklyLoaded(blockly) {
+      // Called once Blockly is fully loaded.
+      window.Blockly = blockly;
+    }
+  
+	<!--
+    var toggle = true;
+	function ToggleBlockly( code ) {
+        if(toggle){
+          $("#blocklyFrame").show()
+        
+          document.getElementById('unity').contentWindow.blocklyLoaded(window.Blockly);
+          document.getElementById('blocklyFrame').contentWindow.setBackground()
+        } else {
+          $("#blocklyFrame").hide()
+          
+          var xml = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+		  var xml_text = Blockly.Xml.domToText(xml);
+		  
+          document.getElementById('unity').contentWindow.returnToGame( code, xml_text )
+        }
+        toggle = !toggle;
+    }
+	-->    
+  </script>
+  
+  <iframe id="blocklyFrame" src="blockly_frame.html" frameBorder="0"></iframe>
+  <iframe id="unity" src="Unity/Unity.html" frameBorder="0"	>
+  </iframe>
+  <script type="text/javascript">
+    $(document).ready(function(){	  
+      $("#blocklyFrame").hide()
+    });
+    
+//     document.write(codepage.start({}, null,
+//         {lang: BlocklyApps.LANG,
+//          langSrc: BlocklyApps.languagePack()}));
+  </script>
+</body>
+</html>
