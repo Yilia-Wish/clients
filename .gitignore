@@ -1,10 +1,5 @@
 # Project Symlinks
 
-web/media
-web/lib/bockly
-web/lib/closure-library-read-only
-
-
 .DS_Store
 .AppleDouble
 .LSOverride
