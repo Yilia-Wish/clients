@@ -51,9 +51,6 @@ Blockly.Blocks['oncreate'] = {
     this.appendStatementInput("BODY");
     this.setInputsInline(true);
     this.setTooltip('');
-    // MBOHL:  Set Background
-    console.log("Initing background image");
-    this.setBackgroundSvg("./images/oncreate.svg");
   }
 };
 Blockly.JavaScript['oncreate'] = function(block) {
